@@ -1,0 +1,4 @@
+for solving the problem of sending a message multiple times you shouldnt
+use event names such as "message" or "send" because these are built in. use 
+"message2" and "send2" instead
+

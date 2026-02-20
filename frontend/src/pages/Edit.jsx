@@ -58,7 +58,7 @@ const Edit = () => {
 
             <div className="editGap">
                 <div className="div1">
-                    <img src={"/profiles/"+chat.profile} className="groupProf" />
+                    <img src={"http://localhost:3000/uploads/profiles/"+chat.profile} className="groupProf" />
                     <input type="text" className="editGapName" placeholder="Enter group name" onChange={(e)=> setGapName(e.target.value)} value={gapName} />
                 </div>
 

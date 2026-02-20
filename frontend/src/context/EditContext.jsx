@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from 'react'
+import { createContext, useReducer, useEffect, useState } from 'react'
 
 export const EditContext = createContext()
 
@@ -18,6 +18,9 @@ export const EditContextProvider = ({ children }) => {
     edit: false
   })
 
+  //this is a flag to prevent conflict of openning Action menu and chat actions
+  const [flag, setFlag] = useState(false)
+
   /* useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'))
 
@@ -29,7 +32,7 @@ export const EditContextProvider = ({ children }) => {
   console.log('AuthContext state:', state) */
   
   return (
-    <EditContext.Provider value={{ ...state, dispatch }}>
+    <EditContext.Provider value={{ ...state, dispatch, flag, setFlag }}>
       { children }
     </EditContext.Provider>
   )

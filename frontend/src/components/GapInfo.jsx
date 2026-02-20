@@ -148,7 +148,7 @@ const GapInfo = ({chat, myId}) => {
         <div className="gapInfoCon">
             <div className="userProfileInfo" onTouchStart={closeActions}>
                 <IoArrowBack className="back" onClick={close} />
-                <img src={"/profiles/"+chat.profile} className="profilePhotoGap"/>
+                <img src={"http://localhost:3000/uploads/profiles/"+chat.profile} className="profilePhotoGap"/>
                 <div className="userStatus">
                     <p>{chat.name}</p>
                     <p className="status">{chat.members.length} members</p>
@@ -186,7 +186,7 @@ const GapInfo = ({chat, myId}) => {
                 <div className="membersList">
                     {chat.members.map((member)=> (
                         <div className="member">
-                            <img src={"/profiles/"+member.profile} className="profilePhoto" />
+                            <img src={"http://localhost:3000/uploads/profiles/"+member.profile} className="profilePhoto" />
                             <div className="memberInfo">
                                 <p className="membername">{member.username}</p>
                                 <p className="status">last seen recently</p>

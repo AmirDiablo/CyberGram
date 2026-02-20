@@ -40,7 +40,7 @@ const Setting = () => {
                 <IoArrowBack className="back" onClick={close} />
                 {result.map((item)=> (
                     <div className="info2" style={{marginLeft: "10px", paddingBottom: "10px"}}>
-                        <img src={"/profiles/"+item.profile}  className="settingProfilePhoto"/>
+                        <img src={"http://localhost:3000/uploads/profiles/"+item.profile}  className="settingProfilePhoto"/>
                         <div className="settingUserInfo">
                             <p className="Sname">{item.username}</p>
                             <p className="status">last seen recently</p>

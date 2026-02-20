@@ -9,6 +9,7 @@ export const useLogin = () => {
     const { dispatch } = useAuthContext()
 
     const login = async(username, email ,password)=> {
+        console.log("soooooooooooooooooo: ", username, email, password)
         const response = await fetch("http://localhost:3000/api/users/login", {
             method: "POST",
             body: JSON.stringify({username, email, password}),

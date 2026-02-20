@@ -43,7 +43,7 @@ const Home = () => {
                                 <div>
                                     {i.username === yourname ? "" : 
                                         <div className="info" onClick={()=> openChat(i, item._id)}>
-                                            <img src={i.profile === "profile.png" ? i.profile : "/profiles/"+ i.profile} className="profilePhoto" />
+                                            <img src={i.profile === "profile.png" ? i.profile : "http://localhost:3000/uploads/profiles/"+ i.profile} className="profilePhoto" />
                                             <div>
                                                 <p className="Sname">{i.username}</p>
                                                 <p className="status">last seen recently</p>
@@ -54,7 +54,7 @@ const Home = () => {
                             ))}
                         </div> : 
                     <div className="gapCon" onClick={()=> openChatGap(item)}>
-                        <img src={"/profiles/"+item.profile} className="profilePhotoGap" />
+                        <img src={"http://localhost:3000/uploads/profiles/"+item.profile} className="profilePhotoGap" />
                         <div>
                             <p className="Sname">{item.name}</p>
                             <p className="status">Hello everyone</p>

@@ -28,7 +28,7 @@ const Nav = () => {
         arrow.classList.remove("arrow2")
     }
 
-    const yourId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).user._id : ""
+    const yourId = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).user?._id : ""
 
     useEffect(()=> {
         fetch("http://localhost:3000/api/users/myInfo/"+yourId)   
@@ -47,7 +47,7 @@ const Nav = () => {
             <MdOutlineKeyboardArrowDown className="arrow" onClick={expand} />
             {me.map((item)=> (
                 <div>
-                    <img src={"/profiles/"+item.profile} alt="profile" className="sideProfile" />
+                    <img src={"http://localhost:3000/uploads/profiles/"+item.profile} alt="profile" className="sideProfile" />
                     <p>{item.username}</p>
                     <p className="number">+98 9100406127</p>
                 </div>

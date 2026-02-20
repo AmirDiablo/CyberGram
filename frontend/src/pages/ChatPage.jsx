@@ -66,7 +66,7 @@ const ChatPage = () => {
         <div className="chatPageCon">
             <UserProfileInfo result={chat} myId={myId}/>
             {me.map((m)=> (
-                <div className="chatPage" style={{backgroundImage: `url(${"../../public/wallpapers/"+m.wallpaper})`}}>
+                <div className="chatPage" style={{backgroundImage: `url(${"http://localhost:3000/uploads/wallpapers/"+m.wallpaper})`}}>
                     <TopChatPage result={chat} location={sign ? sign : "S"} />
                     <SearchInChat />
                     <PvActions myId={myId} sec={chat} chatId={chatId}/>

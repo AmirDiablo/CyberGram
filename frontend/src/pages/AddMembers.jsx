@@ -57,7 +57,7 @@ const AddMembers = () => {
                     <div className="Acontact">
                         {item.contacts.map((item2)=> (
                             <div className="info" onClick={()=> selectMembers(item2._id)}>
-                                <img src={"/profiles/"+item2.profile} className="profilePhoto"/>
+                                <img src={"http://localhost:3000/uploads/profiles/"+item2.profile} className="profilePhoto"/>
                                 <div>
                                     <p>{item2.username}</p>
                                     <p className="status">last seen recently</p>

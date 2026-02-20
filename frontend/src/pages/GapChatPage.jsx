@@ -48,9 +48,9 @@ const GapChatPage = () => {
         <div className="chatPageCon">
             <GapInfo chat={chat} myId={myId} />
             {me.map(m=> (
-                <div className="chatPage" style={{backgroundImage: `url(${"../../public/wallpapers/"+m.wallpaper})`}}>
-                    <GapActions myId={myId} chatId={chat._id}/>
+                <div className="chatPage" style={{backgroundImage: `url(${"http://localhost:3000/uploads/wallpapers/"+m.wallpaper})`}}>
                     <TopChatPageGap result={chat} />
+                    <GapActions myId={myId} chatId={chat._id}/>
                     <GapMessages chatId={chat._id} theme={Theme} />
                     <BottomGapPage chatId={chat._id} />
 

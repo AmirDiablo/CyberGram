@@ -8,11 +8,10 @@ import { EditContextProvider } from './context/EditContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   
-  
-    <AuthContextProvider>
-      <EditContextProvider>
-        <App />
-      </EditContextProvider>
-    </AuthContextProvider>
+  <AuthContextProvider>
+    <EditContextProvider>
+      <App />
+    </EditContextProvider>
+  </AuthContextProvider>
   
 )

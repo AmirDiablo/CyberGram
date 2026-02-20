@@ -31,21 +31,30 @@ const Search = () => {
     }
 
     return ( 
-        <div className="searchPage">
+        <div className="searchPage" style={{position: "relative"}}>
             <form className="top" onSubmit={handleSubmit}>
                 <IoArrowBack className="back" onClick={close} />
                 <input type="search" placeholder="Search" onChange={(e)=> setChat(e.target.value)} value={chat} />
             </form>
 
-            <div className="info" onClick={openChat}>
-                <img src={result.profile} className="profilePhoto"/>
-                <div>
-                    <p className="Sname">{result.username}</p>
-                    <p className="status">last seen recently</p>
-                </div>
-            </div>
 
-            {error && <div className="Serror">{error}</div>}
+            {
+                error ? <div className="Serror">{error}</div> :
+                <div>
+                    {result.length != 0 && 
+                        <div className="info" onClick={openChat}>
+                            <img src={"http://localhost:3000/uploads/profiles/"+result.profile} className="profilePhoto"/>
+                            <div>
+                                <p className="Sname">{result.username}</p>
+                                <p className="status">last seen recently</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+                
+            }
+
+        
         </div>
      );
 }

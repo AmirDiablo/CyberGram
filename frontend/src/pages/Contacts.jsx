@@ -55,7 +55,7 @@ const Contacts = () => {
                     <div className="Acontact">
                         {item.contacts.map((item2)=> (
                             <div className="info" onClick={()=> openChat(item2, item._id)}>
-                                <img src={"/profiles/"+item2.profile} className="profilePhoto"/>
+                                <img src={"http://localhost:3000/uploads/profiles/"+item2.profile} className="profilePhoto"/>
                                 <div>
                                     <p>{item2.username}</p>
                                     <p className="status">last seen recently</p>

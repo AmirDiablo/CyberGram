@@ -26,10 +26,7 @@ const BottomChatPage = ({result, chatId, socketId}) => {
 
     //run diffrent base on passing an argument or not
     const send = async(_value)=> {
-        if(_value){
-            
-        }else{
-            await socket.emit("sendMessage", {senderId, message, chatId})
+        await socket.emit("sendMessage", {senderId, message, chatId})
             document.querySelector(".messageInput").value = ""
             const response = await fetch("http://localhost:3000/api/message", {
                 method: "POST",
@@ -48,7 +45,6 @@ const BottomChatPage = ({result, chatId, socketId}) => {
                 setChat(json)
                 console.log("chat id is: " + chat)
             }
-        }
     }
 
     const sendImage = async()=> {

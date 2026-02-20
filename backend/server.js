@@ -24,6 +24,7 @@ const io = new Server(server, {
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use("/uploads", express.static("uploads"))
 
 app.use("/api/message", messageRoutes)
 app.use("/api/users", userRoutes)

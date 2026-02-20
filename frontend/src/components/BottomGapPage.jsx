@@ -5,6 +5,8 @@ import { MdOutlineKeyboardVoice } from "react-icons/md";
 import { useEffect, useState, useRef, useContext } from "react";
 import axios from "axios"
 import Voice from "./Voice";
+import io from "socket.io-client"
+const socket = io.connect("http://localhost:3000")
 
 const BottomGapPage = ({chatId}) => {
     const [message, setMessage] = useState("")
@@ -12,13 +14,14 @@ const BottomGapPage = ({chatId}) => {
     const [audioURL, setAudioURL] = useState(null);
     const [isRecording, setIsRecording] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
+    const [error, setError] = useState(null)
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
 
     const senderId = JSON.parse(localStorage.getItem("user")).user._id
 
     const send = async(_value)=> {
-            /* await socket.emit("sendMessage", {senderId, message, chatId}) */
+            await socket.emit("sendMessage", {senderId, message, chatId})
             document.querySelector(".messageInput").value = ""
             const response = await fetch("http://localhost:3000/api/message/sendToGap", {
                 method: "POST",
@@ -34,8 +37,8 @@ const BottomGapPage = ({chatId}) => {
             }
             if(response.ok){
                 setError(null)
-                setChat(json)
-                console.log("chat id is: " + chat)
+                /* setChat(json) */
+                console.log("chat id is: " + chatId)
             }
     }
 

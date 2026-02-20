@@ -33,7 +33,7 @@ const UserProfileInfo = ({result, myId}) => {
             <ProfileActions result={result} myId={myId}/>
             <div className="userProfileInfo" onTouchStart={closeActions}>
                 <IoArrowBack className="back" onClick={close} />
-                <img src="/profiles/profile.png" className="profilePhoto2"/>
+                <img src={"http://localhost:3000/uploads/profiles/"+result.profile} className="profilePhoto2"/>
                 <div className="userStatus">
                     <p>{result.username}</p>
                     <p className="status">last seen recently</p>
